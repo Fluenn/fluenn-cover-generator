@@ -106,8 +106,8 @@ func GenerateFrom(imgPath string, cropConfig *CropConfig) image.Image {
 
 	imageConfig := getImageSize(imgPath)
 
-	var cropWidth uint = cropConfig.width
-	var cropHeight uint = cropConfig.height
+	var cropWidth uint = cropConfig.Width
+	var cropHeight uint = cropConfig.Height
 	originalWidth := imageConfig.Width
 	originalHeight := imageConfig.Height
 
