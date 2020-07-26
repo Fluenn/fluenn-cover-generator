@@ -98,18 +98,16 @@ func SaveJPEGImage(img image.Image, path string) {
 }
 
 type CropConfig struct {
-	width  int
-	height int
-	x      int
-	y      int
+	width  uint
+	height uint
 }
 
-func GenerateFrom(imgPath string) image.Image {
+func GenerateFrom(imgPath string, cropConfig *CropConfig) image.Image {
 
 	imageConfig := getImageSize(imgPath)
 
-	var cropWidth uint = 600
-	var cropHeight uint = 350
+	var cropWidth uint = cropConfig.width
+	var cropHeight uint = cropConfig.height
 	originalWidth := imageConfig.Width
 	originalHeight := imageConfig.Height
 
