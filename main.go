@@ -76,7 +76,7 @@ func cropImage(path string, width uint, height uint, x uint, y uint) (image.Imag
 
 }
 
-func SaveImage(img image.Image, path string) {
+func SaveJPEGImage(img image.Image, path string) {
 
 	f, err := os.Create(path)
 	if err != nil {
