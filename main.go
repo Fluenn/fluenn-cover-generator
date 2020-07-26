@@ -98,8 +98,8 @@ func SaveJPEGImage(img image.Image, path string) {
 }
 
 type CropConfig struct {
-	width  uint
-	height uint
+	Width  uint
+	Height uint
 }
 
 func GenerateFrom(imgPath string, cropConfig *CropConfig) image.Image {
