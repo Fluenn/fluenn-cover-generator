@@ -12,6 +12,7 @@ import (
 	_ "image/png"
 	"os"
 
+	"github.com/esimov/stackblur-go"
 	"github.com/oliamb/cutter"
 	"github.com/valyala/fastrand"
 )
@@ -76,6 +77,10 @@ func cropImage(path string, width uint, height uint, x uint, y uint) (image.Imag
 
 }
 
+func blurImage() {
+
+}
+
 func SaveJPEGImage(img image.Image, path string) {
 
 	f, err := os.Create(path)
@@ -100,6 +105,7 @@ func SaveJPEGImage(img image.Image, path string) {
 type CropConfig struct {
 	Width  uint
 	Height uint
+	Blur   uint
 }
 
 func GenerateFrom(imgPath string, cropConfig *CropConfig) image.Image {
@@ -128,6 +134,21 @@ func GenerateFrom(imgPath string, cropConfig *CropConfig) image.Image {
 
 	if err != nil {
 		panic(err)
+	}
+
+	if cropConfig.Blur > 0 {
+		var done chan struct{} = make(chan struct{}, uint32(cropConfig.Blur))
+
+		img = stackblur.Process(
+			img,
+			uint32(cropConfig.Width),
+			uint32(cropConfig.Height),
+			uint32(cropConfig.Blur),
+			done,
+		)
+
+		<-done
+
 	}
 
 	return img

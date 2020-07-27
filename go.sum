@@ -1,3 +1,5 @@
+github.com/esimov/stackblur-go v1.0.0 h1:PuXWrQ16VIh6Di+tn3CpKAyzkIIECo9DPGVecrzyDGc=
+github.com/esimov/stackblur-go v1.0.0/go.mod h1:a3zzeKuJKUpCcReHmEsuPaEnq42D2b/bHoCI8UjIuMY=
 github.com/oliamb/cutter v0.2.2 h1:Lfwkya0HHNU1YLnGv2hTkzHfasrSMkgv4Dn+5rmlk3k=
 github.com/oliamb/cutter v0.2.2/go.mod h1:4BenG2/4GuRBDbVm/OPahDVqbrOemzpPiG5mi1iryBU=
 github.com/valyala/fastrand v1.0.0 h1:LUKT9aKer2dVQNUi3waewTbKV+7H17kvWFNKs2ObdkI=
